@@ -1,9 +1,10 @@
+#pragma once
 #ifndef PARTICIPANT_INF_H
 #define PARTICIPANT_INF_H
 
 #include "constants.h"
 
-struct time
+struct time_
 {
     int hour;
     int minutes;
@@ -21,8 +22,8 @@ struct participant_inf
 {
     int numb;
     person reader;
-    time start;
-    time finish;
+    time_ start;
+    time_ finish;
     char club[MAX_STRING_SIZE];
 };
 
