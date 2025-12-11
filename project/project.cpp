@@ -11,7 +11,8 @@ int main()
     setlocale(LC_ALL, "Russian");
     cout << "Лабораторная работа №8. GIT\n";
     cout << "Вариант №1\n";
-    cout << "Автор: Петровский Дмитрий\n\n";
+    cout << "Автор: Петровский Дмитрий\n";
+    cout << "Группа: 25пинж1д\n\n";
     participant_inf* partic[MAX_FILE_ROWS_COUNT];
     int size;
     try
