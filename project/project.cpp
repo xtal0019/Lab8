@@ -1,4 +1,5 @@
 ﻿#include <iostream>
+#include "sorting.h"
 
 using namespace std;
 
@@ -13,15 +14,15 @@ void print_runners(participant_inf** array_to_print, int size) {
         cout << "Номер участника: ";
         cout << array_to_print[i]->numb << '\n';
         cout << "Участник: ";
-        cout << array_to_print[i]->reader.last_name << ' ';
-        cout << array_to_print[i]->reader.first_name[0] << ". ";
-        cout << array_to_print[i]->reader.middle_name[0] << ".\n";
+        cout << array_to_print[i]->marathon_runner.last_name << ' ';
+        cout << array_to_print[i]->marathon_runner.first_name[0] << ". ";
+        cout << array_to_print[i]->marathon_runner.middle_name[0] << ".\n";
         cout << "Время старта: ";
-        cout << array_to_print[i]->start.hour << ':';
+        cout << array_to_print[i]->start.hours << ':';
         cout << array_to_print[i]->start.minutes << ':';
         cout << array_to_print[i]->start.seconds << '\n';
         cout << "Время финиша: ";
-        cout << array_to_print[i]->finish.hour << ':';
+        cout << array_to_print[i]->finish.hours << ':';
         cout << array_to_print[i]->finish.minutes << ':';
         cout << array_to_print[i]->finish.seconds << '\n';
         cout << "Название клуба: ";
@@ -51,7 +52,11 @@ int main()
         cout << "Выберите фильтр:\n";
         cout << "1. Фильтр на участников клуба \"Спартак\"\n";
         cout << "2. Фильтр на участников,чьё время забега 2:50:00 и меньше\n";
-        cout << "3. Вывести всех участников\n";
+        cout << "3. Bubble Sort - по времени забега\n";
+        cout << "4. Bubble Sort - по Клубу и Фамилии\n";
+        cout << "5. Quick Sort  - по времени забега\n";
+        cout << "6. Quick Sort  - по Клубу и Фамилии\n";
+        cout << "7. Вывести всех участников\n";
         cout << "Ваш выбор: ";
 
         int choice;
@@ -71,6 +76,19 @@ int main()
             break;
 
         case 3:
+            bubble_sort(partic, size, 1);
+            break;
+        case 4:
+            bubble_sort(partic, size, 2);
+            break;
+        case 5:
+            quick_sort(partic, 0, size - 1, 1);
+            break;
+        case 6:
+            quick_sort(partic, 0, size - 1, 2);
+            break;
+
+        case 7:
             break;
 
         default:
@@ -81,6 +99,9 @@ int main()
 
         print_runners(array_to_print, size_to_print);
 
+        if (filtered_list != nullptr) {
+            delete[] filtered_list;
+        }
 
         for (int i = 0; i < size; i++)
         {

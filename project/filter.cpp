@@ -29,8 +29,8 @@ bool isFromSpartakClub(participant_inf* runner) {
 
 bool hasResultBetterThan250(participant_inf* runner) {
 
-    int start_sec = runner->start.hour * 3600 + runner->start.minutes * 60 + runner->start.seconds;
-    int finish_sec = runner->finish.hour * 3600 + runner->finish.minutes * 60 + runner->finish.seconds;
+    int start_sec = runner->start.hours * 3600 + runner->start.minutes * 60 + runner->start.seconds;
+    int finish_sec = runner->finish.hours * 3600 + runner->finish.minutes * 60 + runner->finish.seconds;
 
 
     int totalSeconds = finish_sec - start_sec;

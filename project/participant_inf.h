@@ -6,7 +6,7 @@
 
 struct time_
 {
-    int hour;
+    int hours;
     int minutes;
     int seconds;
 };
@@ -21,7 +21,7 @@ struct person
 struct participant_inf
 {
     int numb;
-    person reader;
+    person marathon_runner;
     time_ start;
     time_ finish;
     char club[MAX_STRING_SIZE];
